@@ -13,6 +13,7 @@ function chatReducer(state, action){
             return {
                 ...state,
                 messages:[...state.messages, { role: 'user', content: action.payload }],
+                history: [...state.history, action.payload.slice(0, 50)],
                 loading: true,
                 error: null,
             }
@@ -22,7 +23,6 @@ function chatReducer(state, action){
             return{
                ...state,
                messages: [...state.messages, { role: 'assistant', content: action.payload}],
-               history: [...state.history, action.payload.slice(0, 50)],
                loading: false, 
             }
 

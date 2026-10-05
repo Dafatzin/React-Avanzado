@@ -23,7 +23,7 @@ function Chat() {
 
         {state.messages.map((msg, index) => (
             <div key={index} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-            <div className={`max-w-[75%] rounded-2x1 px-4 py-2 text-sm whitespace-pre-wrap ${
+            <div className={`max-w-[75%] rounded-2xl px-4 py-2 text-sm whitespace-pre-wrap ${
             msg.role === 'user'
             ? 'bg-purple-600 text-white'
             : 'bg-gray-100  text-gray-800'
@@ -36,7 +36,7 @@ function Chat() {
 
         {state.loading && (
         <div className="flex justify-start">
-        <div className="bg-gray-100 text-gray-500 rounded-2x1 px-4 py-2 text-sm">
+        <div className="bg-gray-100 text-gray-500 rounded-2xl px-4 py-2 text-sm">
             Pensando...
             </div>
             </div>
@@ -55,7 +55,7 @@ function Chat() {
      <input type="text" value={input} onChange={(e) => setInput(e.target.value)} 
      placeholder="Escribe tu mensaje..." disabled={state.loading} className="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-400 disabled:opacity-50"
      />
-     <button type="submit" disabled={state.loading} className="bg-black hover:bg-cyan-700 disabled:opacity-50 text-white font-medium px-4 py-2 rounded-lg text-sm transition-color">
+     <button type="submit" disabled={state.loading} className="bg-black hover:bg-cyan-700 disabled:opacity-50 text-white font-medium px-4 py-2 rounded-lg text-sm transition-colors">
         Enviar
      </button>
      </form>
